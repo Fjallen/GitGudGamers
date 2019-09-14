@@ -9,4 +9,10 @@ class Ranks extends React.Component{
         )
     }
 }
+
+function Rank() {
+    return(
+
+    
+}
 export default Ranks;
