@@ -52,8 +52,13 @@ class App extends React.Component {
           </p>
           <Ranks/>
       </div>*/
+      
       <div className="App">
-        <h1>Get Better</h1>
+          <div className="App-header">
+          <p><strong>Git Gud Noob</strong></p>
+        </div>
+<div className="App-body">
+        <h2>Type of Game</h2>
         <Dropdown
           placeholder='Select a game'
           selection
@@ -61,15 +66,15 @@ class App extends React.Component {
         />
       <Form className="Form">
         <Form.Field>
-          <label>In Game Name</label>
+          <h2>In Game Name</h2>
           <input placeholder='IGN' />
         </Form.Field>
         <Button type='submit' className="btn">Submit</Button>
       </Form>
       <Ranks/>
       </div>
+      </div>
     )
   }
 }
-
 export default App;
