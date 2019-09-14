@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-size: fill;
-  background-color: #90e7fc;
+  background-color: #f0f8fc;
   height: 100vw;
 }
 .Form{
@@ -11,7 +11,7 @@
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 40min;
   pointer-events: none;
   /*background-image: url("./background.jpg");
   background-size: 100%;*/
@@ -19,15 +19,19 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100%;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 40px;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.App-body{
+  padding-top: 30px;
 }

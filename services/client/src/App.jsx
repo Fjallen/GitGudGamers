@@ -49,8 +49,32 @@ class App extends React.Component {
       //The chart and shit here
     }
     return (
+      /*<div className="App">
+          <h1>
+            Get Good
+          </h1>
+          <p>
+            Which Game? <br></br>
+            <select name="game">
+              <option value="tft">Team Fighting Tactics</option>
+              <option value="lol">League of Legends</option>
+            </select>
+          </p>
+          <p>
+          <form action="">
+            In Game Name <br></br>
+            <input type='text' name="ign"></input>
+          </form>
+          </p>
+          <Ranks/>
+      </div>*/
+      
       <div className="App">
-        <h1>Get Better</h1>
+          <div className="App-header">
+          <p><strong>Git Gud Noob</strong></p>
+        </div>
+<div className="App-body">
+        <h2>Type of Game</h2>
         <Dropdown
           placeholder='Select a game'
           selection
@@ -65,8 +89,8 @@ class App extends React.Component {
         </Form>
         {this.state.isSubmitted &&}
       </div>
+      </div>
     )
   }
 }
-
 export default App;

@@ -10,7 +10,7 @@ class Ranks extends React.Component{
   }*/
   render(){
       return (
-          <div>
+          <div className="App-body">
               <h2>
                   Name
               </h2>
