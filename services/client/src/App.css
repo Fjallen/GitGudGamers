@@ -2,7 +2,7 @@
   text-align: center;
   background-size: fill;
   background-color: #f0f8fc;
-  height: 100vw;
+  height: 200vw;
 }
 .Form{
   width: 50%;
@@ -45,8 +45,8 @@
   width:50%;
 }
 
-
-
-
-
-
+#chart-wrapper{
+  margin-left:auto;
+  margin-right:auto;
+  width: 70%;
+}

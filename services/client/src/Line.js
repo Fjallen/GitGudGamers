@@ -1,19 +1,13 @@
 import React, {Component} from 'react';
-import { Line } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 
-var data = {
-  labels: [],
+var ChartData = {
+  labels: ['Scatter'],
   datasets: [
     {
-      label: 'My Gameplay',
+      label: 'My First dataset',
       fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
-      borderColor: 'rgba(75,192,192,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
+      backgroundColor: '#f0f8fc',
       pointBorderColor: 'rgba(75,192,192,1)',
       pointBackgroundColor: '#fff',
       pointBorderWidth: 1,
@@ -28,6 +22,7 @@ var data = {
   ]
 };
 
+
 export default class LineDemo extends Component {
   constructor(props){
     super(props);
@@ -35,23 +30,20 @@ export default class LineDemo extends Component {
     this.props.config = line
   }
   init = (array) =>{
-    var i;
     for(let i = 0; i < array.length; i++){
-      data.labels.push(i);
-      data.datasets[0].data.push(array[i]);
+      ChartData.datasets[0].data.push({x:i,y:array[i]})
     }
   };
 
   componentDidMount(){
     this.init(this.props.data.LPs);
-    console.log(data.datasets[0].data)
   }
 
   render() {
     return (
       <div>
         <h2>Line Example</h2>
-        <Line ref="chart" data={data} />
+        <Scatter ref="chart" data={ChartData} />
       </div>
     );
   }
