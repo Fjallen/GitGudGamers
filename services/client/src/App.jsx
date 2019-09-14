@@ -51,7 +51,7 @@ class App extends React.Component {
 
       <div className="App">
         <div className="App-header">
-          <p><strong>Git Gud Noob</strong></p>
+          <p><strong>Gamealytics</strong></p>
         </div>
         <div className="App-body">
           <label>Type of Game</label> <br></br>
@@ -73,7 +73,7 @@ class App extends React.Component {
             <div>
               <a href="#chart-wrapper"><img src={arrow}/></a>
             </div>
-            <div id="chart-wrapper">   
+            <div id="chart-wrapper">
             <LineDemo
               data={this.state.data}
             />
