@@ -5,8 +5,10 @@ import re
 from operator import add
 import numpy as np
 from scipy.optimize import curve_fit
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 rankDict = {
     'Iron4' : 0,
