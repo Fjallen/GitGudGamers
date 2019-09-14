@@ -20,11 +20,22 @@ const gameOptions = [
 
 
 class App extends React.Component {
-  state = {rankings: []};
+  constructor(){
+    super();
+    this.state ={
+      rankings: [],
+      name: ""
+    }
+    this.handleName = this.handleName.bind(this);
+  }
+  state = {rankings: [],name:""};
 
   onFormSubmit = (event) =>{
     event.preventDefault();
-    console.log(event.target.value)
+  };
+
+  handleName(event){
+    this.setState({name: event.target.value});
   };
 
   getRankings(){
@@ -44,7 +55,7 @@ class App extends React.Component {
       <Form className="Form">
         <Form.Field>
           <label>In Game Name</label>
-          <input placeholder='IGN'/>
+          <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
         </Form.Field>
         <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
       </Form>
