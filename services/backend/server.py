@@ -5,6 +5,7 @@ import re
 from operator import add
 
 # import jsonify
+from flask import jsonify
 
 rankDict = {
     'Iron4' : 0,
@@ -37,7 +38,7 @@ rankDict = {
 }
 
 @app.route("/<str:userid>")
-def predict(id):
+def predict(userid):
     Url = "https://lolchess.gg/profile/na/" + userid #Choose your own url
 
     try:
@@ -46,7 +47,6 @@ def predict(id):
         soup = BeautifulSoup(data)
     except:
         print("Error Occured")
-        
     lps_container = soup.findAll("dl",{"class":"lp"}) # Initializing lp container
     ranks_container = soup.findAll("span", {"class":"tier"}) #Init ranks container
     lps = [] #Init lp list
@@ -59,4 +59,4 @@ def predict(id):
         
     fullLPs = list(map(add, lps,ranks))
 
-    return jsonify()
+    return jsonify(fullLPs)
