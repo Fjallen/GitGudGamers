@@ -4,22 +4,23 @@ class Ranks extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            isPredicted = null
+            isPredicted : null
         }
     }
     render(){
         return (
             <div>
                 <h2>
-                    Name
+                    In Game Name
                 </h2>
                 {this.state.isPredicted &&
                 <div>
-                    Youll reach rank in x games
+                    Youll reach rank y in x games
                 </div>}
                 <h2>
                     What rank do you want to reach?
-                </h2>
+                </h2> 
+
                 //Do graph here
             </div>
         )
