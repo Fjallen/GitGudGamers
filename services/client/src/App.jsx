@@ -78,11 +78,14 @@ class App extends React.Component {
         />
       <Form className="Form">
         <Form.Field>
-          <label>In Game Name</label>
+          <h2>In Game Name</h2>
           <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
         </Form.Field>
         <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
       </Form>
+      <br></br>
+      <br></br>
+      <hr></hr>
       <Ranks/>
       </div>
       </div>

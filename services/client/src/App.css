@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: 45px;
   color: white;
 }
 
@@ -34,4 +34,19 @@
 
 .App-body{
   padding-top: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.dropdown{
+  width:50%;
+}
+
+.arrow{
+  width:50%;
+}
+
+
+
+
+
+
