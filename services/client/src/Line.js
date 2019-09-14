@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Line } from 'react-chartjs-2';
 
-const data = {
+var data = {
   labels: [],
   datasets: [
     {
@@ -30,23 +30,22 @@ const data = {
 
 export default class LineDemo extends Component {
   constructor(props){
-    super(props)
+    super(props);
+    this.init = this.init.bind(this)
   }
-
-  componentDidMount(){
-
-  }
-
-  /*mapToRankings = (array) =>{
-    data.datasets.data = array.slice();
-  };
-
-  initializeX = (array) =>{
+  init = (array) =>{
     var i;
     for(let i = 0; i < array.length; i++){
       data.labels.push(i);
+      data.datasets[0].data.push(array[i]);
     }
-  };*/
+  };
+
+  componentDidMount(){
+    this.init(this.props.data.LPs);
+    console.log(data.datasets[0].data)
+  }
+
   render() {
     return (
       <div>
@@ -54,10 +53,5 @@ export default class LineDemo extends Component {
         <Line ref="chart" data={data} />
       </div>
     );
-  }
-
-  componentDidMount() {
-    const { datasets } = this.refs.chart.chartInstance.data
-    console.log(datasets[0].data);
   }
 }
