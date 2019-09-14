@@ -31,7 +31,8 @@ var data = {
 export default class LineDemo extends Component {
   constructor(props){
     super(props);
-    this.init = this.init.bind(this)
+    this.init = this.init.bind(this);
+    this.props.config = line
   }
   init = (array) =>{
     var i;
