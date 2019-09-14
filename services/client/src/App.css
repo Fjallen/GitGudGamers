@@ -2,7 +2,7 @@
   text-align: center;
   background-size: fill;
   background-color: #f0f8fc;
-  height: 650px;
+  height: 250px;
 }
 .Form{
   width: 50%;
@@ -42,6 +42,10 @@
 }
 
 .arrow{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f622263c89c987303e9e79297ee78ec9c261d00
   width:50%;
 }
 
