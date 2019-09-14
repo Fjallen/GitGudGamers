@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+<<<<<<< HEAD
   background-size: fill;
   background-color: #90e7fc;
   height: 100vw;
@@ -9,11 +10,16 @@
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
+=======
+  background-image: url("./background.jpg");
+  background-size: 100% 100%;
+  
+>>>>>>> 299c15075039587b11d33b5813b5f465617056e9
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,11 +32,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

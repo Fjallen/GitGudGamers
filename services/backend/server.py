@@ -1,11 +1,12 @@
-import flask
+from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
 import requests
 import re
 from operator import add
+import numpy as np
+from scipy.optimize import curve_fit
 
-# import jsonify
-from flask import jsonify
+app = Flask(__name__)
 
 rankDict = {
     'Iron4' : 0,
@@ -37,18 +38,15 @@ rankDict = {
     'Challenger1' : 2600
 }
 
-@app.route("/<str:userid>")
-def predict(userid):
-    Url = "https://lolchess.gg/profile/na/" + userid #Choose your own url
+@app.route("/<string:user_id>")
+def predict(user_id):
+    Url = "https://lolchess.gg/profile/na/" + user_id #Choose your own url
 
-    try:
-        data = requests.get(Url).text
-        #Converting It with Beautiful Soup
-        soup = BeautifulSoup(data)
-    except:
-        print("Error Occured")
+    data = requests.get(Url).text
+    #Converting It with Beautiful Soup
+    soup = BeautifulSoup(data,features="html.parser")
     lps_container = soup.findAll("dl",{"class":"lp"}) # Initializing lp container
-    ranks_container = soup.findAll("span", {"class":"tier"}) #Init ranks container
+    ranks_container = soup.findAll("span", {"class":"name"}) #Init ranks container
     lps = [] #Init lp list
     ranks = [] #Init ranks list
     for lp in lps_container:
@@ -57,6 +55,23 @@ def predict(userid):
     for span in ranks_container:
         ranks.append((rankDict[re.sub('\s+',"",span.text)]))
         
-    fullLPs = list(map(add, lps,ranks))
+    LPS = list(map(add, lps,ranks))
+    #The Regressor
+    def func(x,a,b,c):
+        return a * np.log(b * x) + c
+    lens = len(LPS)
+    print(lens)
+    x = np.arange(1,lens+1)
+    print(x)
+    y = np.flip(np.array(LPS))
+    print(y)
+    popt,pcov=curve_fit(func,x,y)
+    popt=popt.tolist()
+    pcov=pcov.tolist()
+    return jsonify({
+        "LPs":LPS,
+        "popt":popt,
+        "pcov":pcov})
 
-    return jsonify(fullLPs)
+if __name__=="__main__":
+    app.run()
