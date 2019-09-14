@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-size: fill;
-  background-color: #e7f3f8;
+  background-color: #f0f8fc;
   height: 100vw;
 }
 .Form{
@@ -33,5 +33,5 @@
 }
 
 .App-body{
-  padding-top: 20px;
+  padding-top: 30px;
 }
