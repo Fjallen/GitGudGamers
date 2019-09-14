@@ -4,13 +4,17 @@
   background-color: #90e7fc;
   height: 100vw;
 }
-
+.Form{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
-  background-image: url("./background.jpg");
-  background-size: 100% 100%;
+  /*background-image: url("./background.jpg");
+  background-size: 100%;*/
 }
 
 .App-header {

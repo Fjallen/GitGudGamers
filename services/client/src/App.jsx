@@ -3,6 +3,7 @@ import './App.css';
 import Ranks from './Rank.jsx';
 import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
+import { Button, Checkbox, Form } from 'semantic-ui-react';
 
 const gameOptions = [
   {
@@ -58,6 +59,14 @@ class App extends React.Component {
           selection
           options={gameOptions}
         />
+      <Form className="Form">
+        <Form.Field>
+          <label>In Game Name</label>
+          <input placeholder='IGN' />
+        </Form.Field>
+        <Button type='submit' className="btn">Submit</Button>
+      </Form>
+      <Ranks/>
       </div>
     )
   }
