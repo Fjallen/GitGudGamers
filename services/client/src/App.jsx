@@ -56,7 +56,7 @@ class App extends React.Component {
           <p><strong>Git Gud Noob</strong></p>
         </div>
         <div className="App-body">
-          <h2>Type of Game</h2>
+          <label>Type of Game</label> <br></br>
           <Dropdown
             placeholder='Select a game'
             selection
@@ -70,9 +70,14 @@ class App extends React.Component {
             <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
           </Form>
           {(this.state.isSubmitted===true)&&
+          <div>
+            <div>
+              <a href="#id"><img src="Arrow.gif"></img></a>
+            </div>
             <LineDemo
               data={this.state.data}
             />
+          </div>
           }
         </div>
       </div>
