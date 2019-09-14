@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import { Line } from 'react-chartjs-2';
 
 const data = {
-  labels: [this.props.data.LPs.splice()],
+  labels: [],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'My Gameplay',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(75,192,192,0.4)',
@@ -29,12 +29,12 @@ const data = {
 };
 
 export default class LineDemo extends Component {
-  constructor(){
+  constructor(props){
     super(props)
   }
 
   componentDidMount(){
-    
+
   }
 
   /*mapToRankings = (array) =>{

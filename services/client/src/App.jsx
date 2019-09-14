@@ -37,6 +37,7 @@ class App extends React.Component {
     .then((response)=>{
       this.setState({data: response.data});
       console.log(response.data);
+      this.setState({isSubmitted:true})
     });
   };
 
@@ -49,46 +50,31 @@ class App extends React.Component {
       //The chart and shit here
     }
     return (
-      /*<div className="App">
-          <h1>
-            Get Good
-          </h1>
-          <p>
-            Which Game? <br></br>
-            <select name="game">
-              <option value="tft">Team Fighting Tactics</option>
-              <option value="lol">League of Legends</option>
-            </select>
-          </p>
-          <p>
-          <form action="">
-            In Game Name <br></br>
-            <input type='text' name="ign"></input>
-          </form>
-          </p>
-          <Ranks/>
-      </div>*/
-      
+
       <div className="App">
-          <div className="App-header">
+        <div className="App-header">
           <p><strong>Git Gud Noob</strong></p>
         </div>
-<div className="App-body">
-        <h2>Type of Game</h2>
-        <Dropdown
-          placeholder='Select a game'
-          selection
-          options={gameOptions}
-        />
-        <Form className="Form">
-          <Form.Field>
-            <label>In Game Name</label>
-            <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
-          </Form.Field>
-          <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
-        </Form>
-        {this.state.isSubmitted &&}
-      </div>
+        <div className="App-body">
+          <h2>Type of Game</h2>
+          <Dropdown
+            placeholder='Select a game'
+            selection
+            options={gameOptions}
+          />
+          <Form className="Form">
+            <Form.Field>
+              <label>In Game Name</label>
+              <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
+            </Form.Field>
+            <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
+          </Form>
+          {(this.state.isSubmitted===true)&&
+            <LineDemo
+              data={this.state.data}
+            />
+          }
+        </div>
       </div>
     )
   }
