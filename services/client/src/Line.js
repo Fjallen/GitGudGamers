@@ -22,14 +22,14 @@ var ChartData = {
   ]
 };
 
-
 export default class LineDemo extends Component {
   constructor(props){
     super(props);
     this.init = this.init.bind(this);
-    this.props.config = line
+    //this.props.config = line
   }
   init = (array) =>{
+    this.props.data.LPs.reverse();
     for(let i = 0; i < array.length; i++){
       ChartData.datasets[0].data.push({x:i,y:array[i]})
     }
@@ -37,13 +37,14 @@ export default class LineDemo extends Component {
 
   componentDidMount(){
     this.init(this.props.data.LPs);
+    setTimeout(()=>{ this.chartReference.chartInstance.update(); },1000);
   }
 
   render() {
     return (
       <div>
         <h2>Line Example</h2>
-        <Scatter ref="chart" data={ChartData} />
+        <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
       </div>
     );
   }
