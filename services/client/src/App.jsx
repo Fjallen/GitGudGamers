@@ -70,7 +70,7 @@ class App extends React.Component {
           {(this.state.isSubmitted===true)&&
           <div>
             <div>
-              <a href="#id"><img src="Arrow.gif"></img></a>
+              <a href="#id"><img src="./Arrow.gif"></img></a>
             </div>
             <LineDemo
               data={this.state.data}
