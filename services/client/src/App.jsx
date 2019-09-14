@@ -6,6 +6,7 @@ import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { Doughnut } from 'react-chartjs-2';
 import LineDemo from './Line.js';
+import arrow from './Arrow.gif';
 
 const gameOptions = [
   {
@@ -70,11 +71,13 @@ class App extends React.Component {
           {(this.state.isSubmitted===true)&&
           <div>
             <div>
-              <a href="#id"><img src="./Arrow.gif"></img></a>
+              <a href="#chart-wrapper"><img src={arrow}/></a>
             </div>
+            <div id="chart-wrapper">   
             <LineDemo
               data={this.state.data}
             />
+            </div>
           </div>
           }
         </div>
