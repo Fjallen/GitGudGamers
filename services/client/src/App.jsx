@@ -46,9 +46,6 @@ class App extends React.Component {
   };
 
   render(){
-    if (this.state.isSubmitted){
-      //The chart and shit here
-    }
     return (
 
       <div className="App">
@@ -69,6 +66,7 @@ class App extends React.Component {
             </Form.Field>
             <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
           </Form>
+          {/*Render line only untill user clicks submit button */}
           {(this.state.isSubmitted===true)&&
           <div>
             <div>
