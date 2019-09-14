@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  background-image: url("./BackgroundHome.jpg");
   background-size: fill;
+  background-color: #90e7fc;
+  height: 100vw;
 }
 
 .App-logo {

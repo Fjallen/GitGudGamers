@@ -2,6 +2,20 @@ import React from 'react';
 import './App.css';
 import Ranks from './Rank.jsx';
 import axios from 'axios';
+import { Dropdown } from 'semantic-ui-react';
+
+const gameOptions = [
+  {
+    key: 'Team Fighting Tactics',
+    text: 'Team Fighting Tactics',
+    value: 'Team Fighting Tactics'
+  },
+  {
+    key: 'League of Legends',
+    text: 'League of Legends',
+    value: 'League of Legends',
+  },
+]
 
 class App extends React.Component {
   state = {rankings: []};
@@ -18,7 +32,7 @@ class App extends React.Component {
   }
   render(){
     return (
-      <div className="App">
+      /*<div className="App">
           <h1>
             Get Good
           </h1>
@@ -36,8 +50,17 @@ class App extends React.Component {
           </form>
           </p>
           <Ranks/>
+      </div>*/
+      <div className="App">
+        <h1>Get Better</h1>
+        <Dropdown
+          placeholder='Select a game'
+          selection
+          options={gameOptions}
+        />
       </div>
-    )}
+    )
+  }
 }
 
 export default App;
