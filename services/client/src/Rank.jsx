@@ -11,6 +11,7 @@ class Ranks extends React.Component{
   render(){
       return (
           <div className="App-body">
+              <br></br>
               <h2>
                   Name
               </h2>
