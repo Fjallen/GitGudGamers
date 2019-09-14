@@ -18,14 +18,15 @@ const gameOptions = [
   },
 ]
 
+
 class App extends React.Component {
   state = {rankings: []};
-  /*constructor(){
-    super();
-    this.state ={
-      rankings=[]
-    }
-  };*/
+
+  onFormSubmit = (event) =>{
+    event.preventDefault();
+    console.log(event.target.value)
+  };
+
   getRankings(){
     //Make Call Here Later
     axios.get()
@@ -45,7 +46,7 @@ class App extends React.Component {
           <label>In Game Name</label>
           <input placeholder='IGN'/>
         </Form.Field>
-        <Button type='submit' color={'green'} circular={true}>Submit</Button>
+        <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
       </Form>
       <Ranks/>
       </div>
