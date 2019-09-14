@@ -4,12 +4,13 @@ import Ranks from './Rank.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
-  constructor(){
+  state = {rankings: []};
+  /*constructor(){
     super();
     this.state ={
       rankins=[]
     }
-  };
+  };*/
   getRankings(){
     //Make Call Here Later
     axios.get()
