@@ -33,25 +33,6 @@ class App extends React.Component {
   }
   render(){
     return (
-      /*<div className="App">
-          <h1>
-            Get Good
-          </h1>
-          <p>
-            Which Game? <br></br>
-            <select name="game">
-              <option value="tft">Team Fighting Tactics</option>
-              <option value="lol">League of Legends</option>
-            </select>
-          </p>
-          <p>
-          <form action="">
-            In Game Name <br></br>
-            <input type='text' name="ign"></input>
-          </form>
-          </p>
-          <Ranks/>
-      </div>*/
       <div className="App">
         <h1>Get Better</h1>
         <Dropdown
@@ -62,9 +43,9 @@ class App extends React.Component {
       <Form className="Form">
         <Form.Field>
           <label>In Game Name</label>
-          <input placeholder='IGN' />
+          <input placeholder='IGN'/>
         </Form.Field>
-        <Button type='submit' className="btn">Submit</Button>
+        <Button type='submit' color={'green'} circular={true}>Submit</Button>
       </Form>
       <Ranks/>
       </div>
