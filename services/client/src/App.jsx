@@ -22,7 +22,9 @@ function App() {
     <input type='text' name="ign"></input>
   </form>
 </p>
-<Ranks />
+<Ranks
+  property="d"
+/>
     </div>
       );
     }
