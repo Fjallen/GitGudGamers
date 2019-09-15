@@ -4,8 +4,11 @@ import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { Doughnut } from 'react-chartjs-2';
-import LineDemo from './Line.js';
+import LineDemo from './Charting.js';
 import arrow from './Arrow.gif';
+import {Router, Route, Switch} from 'react-router-dom';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 const gameOptions = [
   {
@@ -79,11 +82,14 @@ class App extends React.Component {
               name={this.state.name}
             />
             </div>
-          </div>
-          }
-        </div>
-      </div>
-    )
+          )}/>
+        <Route exact path="/login" render={(
+            <SignIn />
+          )}/>
+        </Switch>
+
+      </Router>
+    );
   }
 }
 export default App;
