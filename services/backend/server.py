@@ -62,11 +62,8 @@ def predict(user_id):
     def func(x,a,b,c):
         return a * np.log(b * x) + c
     lens = len(LPS)
-    print(lens)
     x = np.arange(1,lens+1)
-    print(x)
     y = np.flip(np.array(LPS))
-    print(y)
     popt,pcov=curve_fit(func,x,y)
     popt=popt.tolist()
     pcov=pcov.tolist()
