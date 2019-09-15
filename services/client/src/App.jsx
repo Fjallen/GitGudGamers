@@ -12,6 +12,15 @@ import SignUp from './SignUp';
 import Firebase from 'firebase';
 import config from './config';
 
+function loadingScreen(){
+  var x = document.getElementById("toHide");
+  if (x.style.display=="none"){
+    x.style.display="block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 const gameOptions = [
   {
     key: 'Team Fighting Tactics',

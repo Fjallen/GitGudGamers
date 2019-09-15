@@ -36,6 +36,9 @@ var ChartData = {
 export default class Chart extends Component {
   constructor(props){
     super(props);
+    this.state ={
+      loading:true
+    }
     this.init = this.init.bind(this);
     this.GetWelcome = this.GetWelcome.bind(this);
     this.getTimeToNextRank = this.getTimeToNextRank.bind(this);
@@ -78,9 +81,16 @@ GetWelcome(){
 }
 
   render() {
+    if(this.state.loading){
+      return(
+        <div>
+          <div class="loader"></div>
+        </div>
+      )
+    }
 
     return (
-      <div>
+      <div id="toHide">
         <br></br>
         <h1 id="Welcome"><strong></strong></h1>
         <hr></hr>
