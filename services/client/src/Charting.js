@@ -31,16 +31,13 @@ var ChartData = {
     }
   ]
 };
-var Ranks = {
 
-}
-
-export default class LineDemo extends Component {
+export default class Chart extends Component {
   constructor(props){
     super(props);
     this.init = this.init.bind(this);
     this.GetWelcome = this.GetWelcome.bind(this);
-    //this.props.config = line
+    this.getTimeToNextRank = this.getTimeToNextRank.bind(this);
   }
   init = (array) =>{
     let a = this.props.data.popt[0];
@@ -61,9 +58,9 @@ export default class LineDemo extends Component {
   };
   getTimeToNextRank(){
     var NextRank = this.getNextHundred(this.props.data.LPs[0])
-    var upper = (NextRank - this.props.popt[2]) / this.props.popt[0];
-    var solution = (Math.exp)**upper / this.props.data.popt[1];
-    return solution;
+    var upper = (NextRank - this.props.data.popt[2]) / this.props.data.popt[0];
+    var solution = Math.round((Math.exp(upper))/ this.props.data.popt[1]);
+    document.getElementById("NeverReach").innerHTML = "You will reach your next Rank in : " + solution + " Games";
   }
   getNextHundred(a){
     return Math.ceil(a/100)*100
@@ -72,6 +69,7 @@ export default class LineDemo extends Component {
     this.init(this.props.data.LPs);
     setTimeout(()=>{ this.chartReference.chartInstance.update(); },1000);
     this.GetWelcome();
+    this.getTimeToNextRank();
   }
 GetWelcome(){
   var welcome= "WELCOME " + this.props.name
@@ -87,7 +85,7 @@ GetWelcome(){
         <br></br>
         <h2>Performance</h2>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
-        <p>You will reach your next rank: in X Games </p>
+        <p id="NeverReach"> </p>
       </div>
     );
   }

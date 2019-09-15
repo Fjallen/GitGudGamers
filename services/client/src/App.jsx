@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { Doughnut } from 'react-chartjs-2';
-import LineDemo from './Line.js';
+import LineDemo from './Charting.js';
 import arrow from './Arrow.gif';
 
 const gameOptions = [
