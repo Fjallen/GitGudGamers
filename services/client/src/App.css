@@ -2,7 +2,7 @@
   text-align: center;
   background-size: fill;
   background-color: #f0f8fc;
-  height: 700px;
+  height: 800px;
 }
 .Form{
   width: 50%;
@@ -48,7 +48,6 @@
 h1{
   font-size: 220%;
   color: rgb(90, 91, 94);
-
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -57,4 +56,12 @@ h1{
   margin-right:auto;
   border-top: 200px;
   width: 70%;
+}
+
+p{
+  font-size: 150%;
+}
+
+.Better-label{
+  font-size: 400%;
 }

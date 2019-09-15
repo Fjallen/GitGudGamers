@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Scatter } from 'react-chartjs-2';
+import divide from './Line.png'
 
 var ChartData = {
   labels: ['Scatter'],
@@ -75,9 +76,11 @@ GetWelcome(){
       <div>
         <br></br>
         <h1 id="Welcome"><strong></strong></h1>
+        <hr></hr>
         <br></br>
-        <h2>Performance</h2>
-        <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
+        <br></br>
+        <p>Performance based on all your past games.</p>
+          <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
         <p>You will reach your next rank: in X Games </p>
       </div>
     );
