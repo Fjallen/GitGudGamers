@@ -43,9 +43,6 @@
 
 .arrow{
   text-align: center;
-<<<<<<< HEAD
-  width:50%;
-=======
 }
 
 h1{
@@ -53,7 +50,6 @@ h1{
   color: rgb(90, 91, 94);
 
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
->>>>>>> ee2caee3992784e186c2bc3b5dfaeb5e1f45b82c
 }
 
 #chart-wrapper{
