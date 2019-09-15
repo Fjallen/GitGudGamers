@@ -57,11 +57,7 @@ h1{
   border-top: 200px;
   width: 70%;
 }
-
-p{
-  font-size: 150%;
-}
-
-.Better-label{
-  font-size: 400%;
+#NeverReach{
+  font-size:20px;
+  padding-bottom:40px;
 }
