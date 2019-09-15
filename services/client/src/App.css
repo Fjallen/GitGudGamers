@@ -2,7 +2,7 @@
   text-align: center;
   background-size: fill;
   background-color: #f0f8fc;
-  height: 250px;
+  height: 700px;
 }
 .Form{
   width: 50%;
@@ -42,7 +42,7 @@
 }
 
 .arrow{
-
+  text-align: center;
   width:50%;
 }
 

@@ -70,7 +70,7 @@ class App extends React.Component {
           {/*Render line only untill user clicks submit button */}
           {(this.state.isSubmitted===true)&&
           <div>
-            <div>
+            <div className="arrow">
               <a href="#chart-wrapper"><img src={arrow}/></a>
             </div>
             <div id="chart-wrapper">
