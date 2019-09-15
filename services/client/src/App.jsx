@@ -7,6 +7,9 @@ import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { Doughnut } from 'react-chartjs-2';
 import LineDemo from './Line.js';
 import arrow from './Arrow.gif';
+import {Router, Route, Switch} from 'react-router-dom';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 const gameOptions = [
   {
@@ -47,42 +50,51 @@ class App extends React.Component {
   };
 
   render(){
-    return (
+    return(
+      <Router>
+        <Switch>
+          <Route path="/" render={()=>(
+            <div className="App">
+              <div className="App-header">
+                <p><strong>Gamealytics</strong></p>
+              </div>
+              <div className="App-body">
+                <label>Type of Game</label> <br></br>
+                <Dropdown
+                  placeholder='Select a game'
+                  selection
+                  options={gameOptions}
+                />
+                <Form className="Form">
+                  <Form.Field>
+                    <label>In Game Name</label>
+                    <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
+                  </Form.Field>
+                  <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
+                </Form>
+                {/*Render line only untill user clicks submit button */}
+                {(this.state.isSubmitted===true)&&
+                <div>
+                  <div className="arrow">
+                    <a href="#chart-wrapper"><img src={arrow}/></a>
+                  </div>
+                  <div id="chart-wrapper">
+                  <LineDemo
+                    data={this.state.data}
+                  />
+                  </div>
+                </div>
+                }
+              </div>
+            </div>
+          )}/>
+        <Route exact path="/login" render={(
+            <SignIn />
+          )}/>
+        </Switch>
 
-      <div className="App">
-        <div className="App-header">
-          <p><strong>Gamealytics</strong></p>
-        </div>
-        <div className="App-body">
-          <label>Type of Game</label> <br></br>
-          <Dropdown
-            placeholder='Select a game'
-            selection
-            options={gameOptions}
-          />
-          <Form className="Form">
-            <Form.Field>
-              <label>In Game Name</label>
-              <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
-            </Form.Field>
-            <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
-          </Form>
-          {/*Render line only untill user clicks submit button */}
-          {(this.state.isSubmitted===true)&&
-          <div>
-            <div className="arrow">
-              <a href="#chart-wrapper"><img src={arrow}/></a>
-            </div>
-            <div id="chart-wrapper">
-            <LineDemo
-              data={this.state.data}
-            />
-            </div>
-          </div>
-          }
-        </div>
-      </div>
-    )
+      </Router>
+    );
   }
 }
 export default App;
