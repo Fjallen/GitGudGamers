@@ -39,6 +39,7 @@ export default class LineDemo extends Component {
   constructor(props){
     super(props);
     this.init = this.init.bind(this);
+    this.GetWelcome = this.GetWelcome.bind(this);
     //this.props.config = line
   }
   init = (array) =>{
@@ -70,14 +71,20 @@ export default class LineDemo extends Component {
   componentDidMount(){
     this.init(this.props.data.LPs);
     setTimeout(()=>{ this.chartReference.chartInstance.update(); },1000);
+    this.GetWelcome();
   }
-
+GetWelcome(){
+  var welcome= "WELCOME " + this.props.name
+  document.getElementById("Welcome").innerHTML = welcome.toUpperCase()
+}
 
   render() {
 
     return (
       <div>
-        <h2>{this.props.name}</h2>
+        <br></br>
+        <h1 id="Welcome"><strong></strong></h1>
+        <br></br>
         <h2>Performance</h2>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
         <p>You will reach your next rank: in X Games </p>
