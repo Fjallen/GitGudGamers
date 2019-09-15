@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import Ranks from './Rank.jsx';
 import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import { Doughnut } from 'react-chartjs-2';
-import LineDemo from './Line.js';
+import LineDemo from './Charting.js';
 import arrow from './Arrow.gif';
 import {Router, Route, Switch} from 'react-router-dom';
 import SignIn from './SignIn';
@@ -50,6 +49,7 @@ class App extends React.Component {
   };
 
   render(){
+<<<<<<< HEAD
     return(
       <Router>
         <Switch>
@@ -86,6 +86,39 @@ class App extends React.Component {
                 </div>
                 }
               </div>
+=======
+    return (
+
+      <div className="App">
+        <div className="App-header">
+          <p><strong>Gamealytics</strong></p>
+        </div>
+        <div className="App-body">
+          <label>Type of Game</label> <br></br>
+          <Dropdown
+            placeholder='Select a game'
+            selection
+            options={gameOptions}
+          />
+          <Form className="Form">
+            <Form.Field>
+              <label>In Game Name</label>
+              <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
+            </Form.Field>
+            <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
+          </Form>
+          {/*Render line only untill user clicks submit button */}
+          {(this.state.isSubmitted===true)&&
+          <div>
+            <div className="arrow">
+              <a href="#chart-wrapper"><img src={arrow}/></a>
+            </div>
+            <div id="chart-wrapper">
+            <LineDemo
+              data={this.state.data}
+              name={this.state.name}
+            />
+>>>>>>> ee2caee3992784e186c2bc3b5dfaeb5e1f45b82c
             </div>
           )}/>
         <Route exact path="/login" render={(
