@@ -58,7 +58,10 @@ h1{
 }
 #NeverReach{
   font-size:20px;
-  padding-bottom:40px;
+  padding-bottom:20px;
+}
+#feel-good{
+  padding-bottom: 50px;
 }
 
 .loader{

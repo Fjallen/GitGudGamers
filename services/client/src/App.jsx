@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
-import { Doughnut } from 'react-chartjs-2';
-import LineDemo from './Charting.js';
+import { Button, Form } from 'semantic-ui-react';
+import Charting from './Charting.js';
 import arrow from './Arrow.gif';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SignIn from './SignIn';
@@ -12,20 +11,12 @@ import SignUp from './SignUp';
 import Firebase from 'firebase';
 import config from './config';
 
-function loadingScreen(){
-  var x = document.getElementById("toHide");
-  if (x.style.display=="none"){
-    x.style.display="block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 const gameOptions = [
   {
-    key: 'Team Fighting Tactics',
-    text: 'Team Fighting Tactics',
-    value: 'Team Fighting Tactics'
+    key: 'Team Fight Tactics',
+    text: 'Team Fight Tactics',
+    value: 'Team Fight Tactics',
   },
   {
     key: 'League of Legends',
@@ -101,7 +92,7 @@ class App extends React.Component {
                           <a href="#chart-wrapper"><img src={arrow}/></a>
                         </div>
                         <div id="chart-wrapper">
-                        <LineDemo
+                        <Charting
                           data={this.state.data}
                           name={this.state.name}
                         />

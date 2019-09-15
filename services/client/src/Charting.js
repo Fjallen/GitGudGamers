@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Scatter } from 'react-chartjs-2';
-import divide from './Line.png'
 
 var ChartData = {
   labels: ['Scatter'],
@@ -65,6 +64,7 @@ export default class Chart extends Component {
     var upper = (NextRank - this.props.data.popt[2]) / this.props.data.popt[0];
     var solution = Math.round((Math.exp(upper))/ this.props.data.popt[1]);
     document.getElementById("NeverReach").innerHTML = "According to your trends, you will reach your next Rank in : " + solution + " Games";
+    document.getElementById("feel-good").innerHTML = "You are doing very well amongst other players in your rank"
   }
   getNextHundred(a){
     return Math.ceil(a/100)*100
@@ -81,24 +81,17 @@ GetWelcome(){
 }
 
   render() {
-    if(this.state.loading){
-      return(
-        <div>
-          <div class="loader"></div>
-        </div>
-      )
-    }
-
     return (
       <div id="toHide">
         <br></br>
         <h1 id="Welcome"><strong></strong></h1>
         <hr></hr>
         <br></br>
-        <h2>Performace based on all your past games.</h2> <br></br>
+        <h2>Here's How You Are Performing</h2> <br></br>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
         <br></br> <br></br>
         <h2 id="NeverReach"> </h2>
+        <h2 id="feel-good"></h2>
       </div>
     );
   }
