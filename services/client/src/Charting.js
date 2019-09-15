@@ -5,7 +5,7 @@ var ChartData = {
   labels: ['Scatter'],
   datasets: [
     {
-      label: 'My First dataset',
+      label: 'My Games',
       fill: false,
       backgroundColor: '#f0f8fc',
       pointBorderColor: 'rgba(75,192,192,1)',
@@ -21,12 +21,12 @@ var ChartData = {
     },
     {
       type: 'line',
-      label: 'Fitted',
+      label: 'My Estimates',
       data: [],
       fill: false,
       backgroundColor: "rgba(218,83,79, .7)",
       borderColor: "rgba(218,83,79, .7)",
-      pointRadius: 2,
+      pointRadius: 1,
       showLine: true
     }
   ]
