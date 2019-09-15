@@ -61,7 +61,7 @@ export default class Chart extends Component {
     var NextRank = this.getNextHundred(this.props.data.LPs[0])
     var upper = (NextRank - this.props.data.popt[2]) / this.props.data.popt[0];
     var solution = Math.round((Math.exp(upper))/ this.props.data.popt[1]);
-    document.getElementById("NeverReach").innerHTML = "You will reach your next Rank in : " + solution + " Games";
+    document.getElementById("NeverReach").innerHTML = "According to your trends, you will reach your next Rank in : " + solution + " Games";
   }
   getNextHundred(a){
     return Math.ceil(a/100)*100
@@ -85,9 +85,10 @@ GetWelcome(){
         <h1 id="Welcome"><strong></strong></h1>
         <hr></hr>
         <br></br>
-        <h2>Performance</h2>
+        <h2>Performace based on all your past games.</h2> <br></br>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
-        <p id="NeverReach"> </p>
+        <br></br> <br></br>
+        <h2 id="NeverReach"> </h2>
       </div>
     );
   }
