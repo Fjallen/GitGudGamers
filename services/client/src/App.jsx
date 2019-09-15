@@ -10,6 +10,15 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
+function loadingScreen(){
+  var x = document.getElementById("toHide");
+  if (x.style.display=="none"){
+    x.style.display="block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 const gameOptions = [
   {
     key: 'Team Fighting Tactics',
@@ -51,7 +60,7 @@ class App extends React.Component {
   render(){
     return (
       <Router>
-        <div className="App">
+        <div className="App" id="toHide">
             <div className="App-header">
               <p><strong>Gamealytics</strong></p>
             </div>
