@@ -41,7 +41,6 @@ class App extends React.Component {
 
   writeUserData =()=>{
     Firebase.database().ref().set(this.state);
-    console.log('SAVED DAVE BICH')
   }
 
   onFormSubmit = (event) =>{
@@ -49,7 +48,6 @@ class App extends React.Component {
     axios.get(`http://localhost:5000/${this.state.name}`)
     .then((response)=>{
       this.setState({data: response.data});
-      console.log(response.data);
       this.setState({isSubmitted:true})
       this.writeUserData();
     });
@@ -92,7 +90,7 @@ class App extends React.Component {
                         <a href="#chart-wrapper"><img src={arrow}/></a>
                       </div>
                       <div id="chart-wrapper">
-                      <LineDemo
+                      <Charting
                         data={this.state.data}
                         name={this.state.name}
                       />
