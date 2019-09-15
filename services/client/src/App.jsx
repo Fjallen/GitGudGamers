@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   writeUserData =()=>{
-    Firebase.database().ref("hackthenorth-f4c9e").set(this.state);
+    Firebase.database().ref().set(this.state);
     console.log('SAVED DAVE BICH')
   }
 
