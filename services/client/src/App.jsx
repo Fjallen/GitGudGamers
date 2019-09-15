@@ -56,7 +56,8 @@ class App extends React.Component {
               <p><strong>Gamealytics</strong></p>
             </div>
             <div className="App-body">
-              <label>Type of Game</label> <br></br>
+              <br></br>
+              <h2><label>Type of Game</label></h2> 
               <Dropdown
                 placeholder='Select a game'
                 selection
@@ -64,7 +65,7 @@ class App extends React.Component {
               />
               <Form className="Form">
                 <Form.Field>
-                  <label>In Game Name</label>
+                  <h2><label>In Game Name</label></h2>
                   <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
                 </Form.Field>
                 <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>

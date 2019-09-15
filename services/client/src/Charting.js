@@ -85,16 +85,9 @@ GetWelcome(){
         <h1 id="Welcome"><strong></strong></h1>
         <hr></hr>
         <br></br>
-<<<<<<< HEAD:services/client/src/Line.js
-        <br></br>
-        <p>Performance based on all your past games.</p>
-          <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
-        <p>You will reach your next rank: in X Games </p>
-=======
         <h2>Performance</h2>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
         <p id="NeverReach"> </p>
->>>>>>> 91ef76442df9116bdf5d13873ff0806db5bc19ea:services/client/src/Charting.js
       </div>
     );
   }
