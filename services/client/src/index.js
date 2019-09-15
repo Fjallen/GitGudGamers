@@ -5,10 +5,11 @@ import App from './App.jsx';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Switch} from 'react-router-dom';
 
+
 ReactDOM.render(
   <Router>
     <Switch>
-      <App />  
+      <App />
     </Switch>
   </Router>, document.getElementById('root'));
 

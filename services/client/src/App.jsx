@@ -9,6 +9,8 @@ import arrow from './Arrow.gif';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Firebase from 'firebase';
+import config from './config';
 
 const gameOptions = [
   {
@@ -26,12 +28,20 @@ const gameOptions = [
 class App extends React.Component {
   constructor(){
     super();
+    Firebase.initializeApp(config);
     this.state ={
       data: [],
       name: "",
-      isSubmitted:false
+      isSubmitted:false,
+      formValue:""
     }
     this.handleName = this.handleName.bind(this);
+    this.writeUserData = this.writeUserData.bind(this);
+  }
+
+  writeUserData =()=>{
+    Firebase.database().ref("hackthenorth-f4c9e").set(this.state);
+    console.log('SAVED DAVE BICH')
   }
 
   onFormSubmit = (event) =>{
@@ -41,6 +51,7 @@ class App extends React.Component {
       this.setState({data: response.data});
       console.log(response.data);
       this.setState({isSubmitted:true})
+      this.writeUserData();
     });
   };
 
@@ -51,42 +62,47 @@ class App extends React.Component {
   render(){
     return (
       <Router>
-        <div className="App">
-            <div className="App-header">
-              <p><strong>Gamealytics</strong></p>
-            </div>
-            <div className="App-body">
-              <br></br>
-              <h2><label>Type of Game</label></h2> 
-              <Dropdown
-                placeholder='Select a game'
-                selection
-                options={gameOptions}
-              />
-              <Form className="Form">
-                <Form.Field>
-                  <h2><label>In Game Name</label></h2>
-                  <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
-                </Form.Field>
-                <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
-              </Form>
-              {/*Render line only untill user clicks submit button */}
-              {(this.state.isSubmitted===true)&&
-              <div>
-                <div className="arrow">
-                  <a href="#chart-wrapper"><img src={arrow}/></a>
-                </div>
-                <div id="chart-wrapper">
-                <LineDemo
-                  data={this.state.data}
-                  name={this.state.name}
-                />
-                </div>
-              </div>}
-            </div>
-        </div>
+        <Switch>
+          <Route exact path="/signup" component={SignUp}/>
+          <Route exact path="/login" component={SignIn}/>
+          <Route path="/" render={()=>(
+                <div className="App">
+                    <div className="App-header">
+                      <p><strong>Gamealytics</strong></p>
+                    </div>
+                    <div className="App-body">
+                      <br></br>
+                      <h2><label>Type of Game</label></h2>
+                      <Dropdown
+                        placeholder='Select a game'
+                        selection
+                        options={gameOptions}
+                      />
+                      <Form className="Form">
+                        <Form.Field>
+                          <h2><label>In Game Name</label></h2>
+                          <input onChange={this.handleName} value={this.state.name} placeholder="IGN"/>
+                        </Form.Field>
+                        <Button type='submit' color={'green'} circular={true} onClick={this.onFormSubmit}>Submit</Button>
+                      </Form>
+                      {/*Render line only untill user clicks submit button */}
+                      {(this.state.isSubmitted===true)&&
+                      <div>
+                        <div className="arrow">
+                          <a href="#chart-wrapper"><img src={arrow}/></a>
+                        </div>
+                        <div id="chart-wrapper">
+                        <LineDemo
+                          data={this.state.data}
+                          name={this.state.name}
+                        />
+                        </div>
+                      </div>}
+                    </div>
+                  </div>
+              )}/>
+        </Switch>
       </Router>
-      
     );
   }
 }
