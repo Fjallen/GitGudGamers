@@ -58,6 +58,15 @@ export default class LineDemo extends Component {
       ChartData.datasets[1].data.push({x:i,y:val});
     }
   };
+  getTimeToNextRank(){
+    var NextRank = this.getNextHundred(this.props.data.LPs[0])
+    var upper = (NextRank - this.props.popt[2]) / this.props.popt[0];
+    var solution = (Math.exp)**upper / this.props.data.popt[1];
+    return solution;
+  }
+  getNextHundred(a){
+    return Math.ceil(a/100)*100
+  }
   componentDidMount(){
     this.init(this.props.data.LPs);
     setTimeout(()=>{ this.chartReference.chartInstance.update(); },1000);
