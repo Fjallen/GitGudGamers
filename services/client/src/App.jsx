@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Ranks from './Rank.jsx';
 import axios from 'axios';
 import { Dropdown } from 'semantic-ui-react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
@@ -76,6 +75,7 @@ class App extends React.Component {
             <div id="chart-wrapper">
             <LineDemo
               data={this.state.data}
+              name={this.state.name}
             />
             </div>
           </div>

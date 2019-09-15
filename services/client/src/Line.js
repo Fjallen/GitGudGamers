@@ -31,6 +31,9 @@ var ChartData = {
     }
   ]
 };
+var Ranks = {
+
+}
 
 export default class LineDemo extends Component {
   constructor(props){
@@ -60,11 +63,15 @@ export default class LineDemo extends Component {
     setTimeout(()=>{ this.chartReference.chartInstance.update(); },1000);
   }
 
+
   render() {
+
     return (
       <div>
+        <h2>{this.props.name}</h2>
         <h2>Performance</h2>
         <Scatter ref={(reference)=> this.chartReference = reference} data={ChartData} />
+        <p>You will reach your next rank: in X Games </p>
       </div>
     );
   }
