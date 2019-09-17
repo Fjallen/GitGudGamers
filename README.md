@@ -1,5 +1,7 @@
 # GitGudGamers
 
+## Front-end is LIVE at https://fjallen.github.io/GitGudGamers/
+## Backend is CURRENTLY LOOKING FOR A FREE WEB SERVER SERVICE
 Want to see how well you are playing Team Fight Tactics? 
 Or perhaps wondering how many games it takes to get to the next rank? 
 Play with this project and you will have both 
