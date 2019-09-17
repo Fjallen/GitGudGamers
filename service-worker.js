@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/GitGudGamers/precache-manifest.ed7b6a6da5f8a09af2ee181cb42c498f.js"
+  "/GitGudGamers/precache-manifest.e6c2cd5dc68c828a940f5a1d3cf2234f.js"
 );
 
 self.addEventListener('message', (event) => {
