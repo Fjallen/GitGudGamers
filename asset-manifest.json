@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/GitGudGamers/static/css/main.c8c044fe.chunk.css",
+    "main.js": "/GitGudGamers/static/js/main.56ed2fd5.chunk.js",
+    "main.js.map": "/GitGudGamers/static/js/main.56ed2fd5.chunk.js.map",
+    "runtime~main.js": "/GitGudGamers/static/js/runtime~main.46535e73.js",
+    "runtime~main.js.map": "/GitGudGamers/static/js/runtime~main.46535e73.js.map",
+    "static/js/2.832b445c.chunk.js": "/GitGudGamers/static/js/2.832b445c.chunk.js",
+    "static/js/2.832b445c.chunk.js.map": "/GitGudGamers/static/js/2.832b445c.chunk.js.map",
+    "index.html": "/GitGudGamers/index.html",
+    "precache-manifest.ed7b6a6da5f8a09af2ee181cb42c498f.js": "/GitGudGamers/precache-manifest.ed7b6a6da5f8a09af2ee181cb42c498f.js",
+    "service-worker.js": "/GitGudGamers/service-worker.js",
+    "static/css/main.c8c044fe.chunk.css.map": "/GitGudGamers/static/css/main.c8c044fe.chunk.css.map",
+    "static/media/Arrow.gif": "/GitGudGamers/static/media/Arrow.631ab28c.gif"
+  }
+}
